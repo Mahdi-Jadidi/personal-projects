@@ -1,0 +1,37 @@
+create_template 'Simulator' Math:hard:1 Chemistry:easy:1 Physics:medium:2
+create_template 'Simulator' Geography:medium:2
+generate_test 'test No.1' 'Simulater'
+generate_test 'test No.1' 'Simulator'
+generate_test 'test No.2' 'Simulator'
+attend 'test No.3'
+attend 'test No.1'
+previous
+2
+3
+previous
+2
+
+2
+auto_generate 'test No.3'
+attend 'test No.3'
+1
+2
+2
+previous
+previous
+3
+2
+4
+3
+2
+3
+3
+4
+1
+report tests
+attend 'test No.2'
+1
+2
+3
+4
+report subject Physics

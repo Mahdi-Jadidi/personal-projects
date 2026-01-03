@@ -1,0 +1,172 @@
+Template 'Simulator' was created successfully.
+Duplicate name: 'Simulator'
+Could not find template: 'Simulater'
+Test 'test No.1' was generated successfully.
+Test 'test No.2' was generated successfully.
+Could not find test: 'test No.3'
+test No.1:
+
+1) What is H2O?
+    1. Salt
+    2. Oxygen
+    3. Water
+    4. Sugar
+Your answer: Invalid answer, please try again.
+Your answer: 
+2) What is 15 - 8?
+    1. 5
+    2. 7
+    3. 9
+    4. 10
+Your answer: 
+3) What is the Earth's primary energy source?
+    1. Moon
+    2. Stars
+    3. Sun
+    4. Wind
+Your answer: 
+2) What is 15 - 8?
+    1. 5
+    2. 7
+    3. 9 <-
+    4. 10
+Your answer: 
+3) What is the Earth's primary energy source?
+    1. Moon
+    2. Stars
+    3. Sun
+    4. Wind
+Your answer: 
+4) What is the unit of force?
+    1. Joule
+    2. Newton
+    3. Watt
+    4. Volt
+Your answer: 
+Finished test No.1.
+Test 'test No.3' was generated successfully.
+test No.3:
+
+1) What is H2O?
+    1. Salt
+    2. Oxygen
+    3. Water
+    4. Sugar
+Your answer: 
+2) What is the chemical formula for salt?
+    1. NaCl
+    2. H2O
+    3. CO2
+    4. Fe2O3
+Your answer: 
+3) What is the symbol for gold?
+    1. Go
+    2. Gl
+    3. Au
+    4. Ag
+Your answer: 
+4) What is the symbol for iron?
+    1. Ir
+    2. Fe
+    3. In
+    4. I
+Your answer: 
+3) What is the symbol for gold?
+    1. Go
+    2. Gl <-
+    3. Au
+    4. Ag
+Your answer: 
+2) What is the chemical formula for salt?
+    1. NaCl
+    2. H2O <-
+    3. CO2
+    4. Fe2O3
+Your answer: 
+3) What is the symbol for gold?
+    1. Go
+    2. Gl <-
+    3. Au
+    4. Ag
+Your answer: 
+4) What is the symbol for iron?
+    1. Ir
+    2. Fe
+    3. In
+    4. I
+Your answer: 
+5) Which gas do plants absorb?
+    1. Oxygen
+    2. Nitrogen
+    3. Carbon dioxide
+    4. Hydrogen
+Your answer: 
+6) Which is a noble gas?
+    1. Oxygen
+    2. Helium
+    3. Nitrogen
+    4. Chlorine
+Your answer: 
+7) What force slows moving objects?
+    1. Gravity
+    2. Momentum
+    3. Friction
+    4. Acceleration
+Your answer: 
+8) What is the Earth's primary energy source?
+    1. Moon
+    2. Stars
+    3. Sun
+    4. Wind
+Your answer: 
+9) What is the hardest natural substance?
+    1. Gold
+    2. Diamond
+    3. Iron
+    4. Copper
+Your answer: 
+10) What is the unit of electric current?
+    1. Volt
+    2. Ampere
+    3. Watt
+    4. Ohm
+Your answer: 
+Finished test No.3.
+Results per attended tests:
+
+test No.1: 2 corrects, 1 incorrects and 1 blanks. Score: 50.000%.
+test No.3: 4 corrects, 6 incorrects and 0 blanks. Score: 40.000%.
+test No.2:
+
+1) What is H2O?
+    1. Salt
+    2. Oxygen
+    3. Water
+    4. Sugar
+Your answer: 
+2) What is 15 - 8?
+    1. 5
+    2. 7
+    3. 9
+    4. 10
+Your answer: 
+3) What is the Earth's primary energy source?
+    1. Moon
+    2. Stars
+    3. Sun
+    4. Wind
+Your answer: 
+4) What is the unit of force?
+    1. Joule
+    2. Newton
+    3. Watt
+    4. Volt
+Your answer: 
+Finished test No.2.
+Results for Physics:
+
+Easy: 1 corrects, 1 incorrects and 0 blanks.
+Medium: 3 corrects, 1 incorrects and 1 blanks.
+Hard: 0 corrects, 1 incorrects and 0 blanks.
+
+Total score: 50.000%.
