@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Event</title>
+    <link rel="stylesheet" href="addevent.css" />
+</head>
+<body>
+
+    <!-- دکمه برگشت به هوم -->
+    <a href="/" class="home-button">← Back to Home</a>
+
+    <h1>Add Event</h1>
+
+    <div id="messageBox"></div>
+
+    <!-- فرم رویداد معمولی -->
+    <h2>Normal Event</h2>
+    <form method="POST" action="/addevent" id="normalEventForm">
+        <input type="hidden" name="eventType" value="normal" />
+        <label>Date:
+            <input type="date" name="date" required />
+        </label>
+        <label>Start Time (0-23):
+            <input type="number" name="startTime" min="0" max="23" required />
+        </label>
+        <label>Duration (hours):
+            <input type="number" name="duration" min="1" required />
+        </label>
+        <label>Title:
+            <input type="text" name="title" required />
+        </label>
+        <label>Description:
+            <textarea name="description"></textarea>
+        </label>
+        <button class="button" type="submit">Add Normal Event</button>
+    </form>
+
+    <!-- فرم رویداد هفتگی -->
+    <h2>Weekly Event</h2>
+    <form method="POST" action="/addevent" id="weeklyEventForm">
+        <input type="hidden" name="eventType" value="weekly" />
+        <label>Start Date:
+            <input type="date" name="startDate" required />
+        </label>
+        <label>End Date:
+            <input type="date" name="endDate" required />
+        </label>
+        <label>Start Time (0-23):
+            <input type="number" name="startTime" min="0" max="23" required />
+        </label>
+        <label>Duration (hours):
+            <input type="number" name="duration" min="1" required />
+        </label>
+        <label>Title:
+            <input type="text" name="title" required />
+        </label>
+        <label>Description:
+            <textarea name="description"></textarea>
+        </label>
+        <div class="weekday-group">
+            <label><input type="checkbox" name="weekDays" value="0" /> Sun</label>
+            <label><input type="checkbox" name="weekDays" value="1" /> Mon</label>
+            <label><input type="checkbox" name="weekDays" value="2" /> Tue</label>
+            <label><input type="checkbox" name="weekDays" value="3" /> Wed</label>
+            <label><input type="checkbox" name="weekDays" value="4" /> Thu</label>
+            <label><input type="checkbox" name="weekDays" value="5" /> Fri</label>
+            <label><input type="checkbox" name="weekDays" value="6" /> Sat</label>
+        </div>
+        <button class="button" type="submit">Add Weekly Event</button>
+    </form>
+
+    <!-- فرم رویداد مشترک -->
+    <h2>Joint Event</h2>
+    <form method="POST" action="/addevent" id="jointEventForm">
+        <input type="hidden" name="eventType" value="joint" />
+        <label>Date:
+            <input type="date" name="date" required />
+        </label>
+        <label>Start Time (0-23):
+            <input type="number" name="startTime" min="0" max="23" required />
+        </label>
+        <label>End Time (0-23):
+            <input type="number" name="endTime" min="0" max="23" required />
+        </label>
+        <label>Title:
+            <input type="text" name="title" required />
+        </label>
+        <label>Description:
+            <textarea name="description"></textarea>
+        </label>
+        <label>Guests (comma-separated usernames):
+            <input type="text" name="guests" required />
+        </label>
+        <button class="button" type="submit">Add Joint Event</button>
+    </form>
+
+</body>
+</html>

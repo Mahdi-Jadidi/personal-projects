@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colors Page</title>
+</head>
+
+<body>
+  <h1>Colors</h1>
+  <form action="/colors">
+    Choose color:
+    <span>
+      <label>
+        <input type="radio" name="color" value="red" checked>
+        Red
+      </label>
+      <label>
+        <input type="radio" name="color" value="navy">
+        Navy
+      </label>
+      <label>
+        <input type="radio" name="color" value="green">
+        Green
+      </label>
+    </span><br>
+    <label>
+      Your name:
+      <input type="text" name="name">
+    </lab>
+    <input type="submit" value="Submit">
+  </form>
+
+  <%
+    if (context["color"] == "red") {
+  %>
+  <div style="color: red; height: 10px;">
+    <%
+      cout << context["name"];
+    %>
+  </div>
+  <%
+    }
+    else if (context["color"] == "navy") {
+  %>
+  <div style="color: navy; height: 10px;">
+    <%
+      cout << context["name"];
+    %>
+  </div>
+  <%
+    }
+    else if (context["color"] == "green") {
+  %>
+  <div style="color: green; height: 10px;">
+    <%
+      cout << context["name"];
+    %>
+  </div>
+  <%
+    }
+  %>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+/* استایل کلی بدنه */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* دکمه برگشت به هوم */
+.home-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #333;
+}
+
+/* تیترها */
+h1 {
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+/* فرم‌ها */
+form {
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* برچسب‌ها و ورودی‌ها */
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+/* گروه چک‌باکس روزهای هفته */
+.weekday-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.weekday-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* دکمه‌ها */
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* افکت لرزش هنگام کلیک روی دکمه */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+.button:active {
+    animation: shake 0.3s;
+}
+
+/* پیام (اگر نیاز باشد) */
+#messageBox {
+    display: none;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 6px;
+    font-weight: 600;
+}

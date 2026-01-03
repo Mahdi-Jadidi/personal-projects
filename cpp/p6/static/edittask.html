@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edit Task</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="edittask.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Task</h1>
+
+    <div class="button-container">
+      <a href="/">Back to Home</a>
+    </div>
+
+    <form id="editTaskForm" action="/edittask" method="POST">
+      <div class="form-group">
+        <label for="taskId">Task ID (required):</label>
+        <input type="number" id="taskId" name="taskId" required min="1" />
+      </div>
+      <div class="form-group">
+        <label for="date">New Date (optional):</label>
+        <input type="date" id="date" name="date" />
+      </div>
+      <div class="form-group">
+        <label for="time">New Start Time (HHMM, optional):</label>
+        <input type="number" id="time" name="time" min="0" max="2359" />
+      </div>
+      <div class="form-group">
+        <label for="title">New Title (optional):</label>
+        <input type="text" id="title" name="title" />
+      </div>
+      <div class="form-group">
+        <label for="description">New Description (optional):</label>
+        <textarea id="description" name="description" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn">Update Task</button>
+    </form>
+
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("editTaskForm");
+      const messageDiv = document.getElementById("message");
+
+      const params = new URLSearchParams(window.location.search);
+      const successMsg = params.get("success");
+      const errorMsg = params.get("error");
+
+      if (successMsg) showMessage(successMsg, "success");
+      else if (errorMsg) showMessage(errorMsg, "error");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        fetch("/edittask", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (response.redirected) {
+              window.location.href = response.url;
+            }
+          })
+          .catch((error) => {
+            showMessage("Request failed: " + error.message, "error");
+          });
+      });
+
+      function showMessage(message, type) {
+        messageDiv.textContent = message;
+        messageDiv.className = "message " + type;
+        setTimeout(() => {
+          messageDiv.textContent = "";
+          messageDiv.className = "message";
+        }, 5000);
+      }
+    });
+  </script>
+</body>
+</html>

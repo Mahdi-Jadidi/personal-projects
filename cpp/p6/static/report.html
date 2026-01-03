@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task Report</title>
+  <link rel="stylesheet" href="report.css" />
+</head>
+<body>
+  <h1>Task Report Between Dates</h1>
+
+  <div id="errorMsg" class="error"></div>
+
+  <form id="reportForm" method="POST" action="/report">
+    <label for="from">Start Date:</label>
+    <input type="date" id="from" name="from" required />
+
+    <label for="to">End Date:</label>
+    <input type="date" id="to" name="to" required />
+
+    <button type="submit">Get Report</button>
+  </form>
+
+  <div class="button-container">
+    <a href="/" class="home">Back to Home</a>
+  </div>
+
+  <script src="report.js"></script>
+</body>
+</html>

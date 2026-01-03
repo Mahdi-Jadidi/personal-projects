@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AP HTTP</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #222;
+      letter-spacing: 0.05em;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 800px; /* محدود کردن عرض کانتینر */
+      width: 100%;
+    }
+
+    a {
+      flex: 1 1 150px; /* عرض پایه حدود 150px، انعطاف‌پذیر */
+      max-width: 200px; /* حداکثر عرض */
+      padding: 0.7rem 1rem;
+      text-decoration: none;
+      text-align: center;
+      border: 2px solid #4a90e2;
+      border-radius: 6px;
+      color: #4a90e2;
+      font-weight: 600;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    a.logout {
+      border-color: #e05c5c;
+      color: #e05c5c;
+      font-weight: 700;
+    }
+
+    a.logout:hover,
+    a.logout:focus {
+      background-color: #e05c5c;
+      color: white;
+      outline: none;
+      animation: shake 0.4s ease-in-out;
+    }
+
+    @keyframes shake {
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      20%,
+      60% {
+        transform: translateX(-3px);
+      }
+
+      40%,
+      80% {
+        transform: translateX(3px);
+      }
+    }
+
+    a:hover,
+    a:focus {
+      background-color: #4a90e2;
+      color: white;
+      outline: none;
+      animation: shake 0.4s ease-in-out;
+    }
+
+    @media (max-width: 400px) {
+      a {
+        flex-basis: 90%;
+        max-width: none;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>UT RELLO</h1>
+  <div class="button-container">
+    <a href="/login">login</a>
+    <a href="/logout" class="logout">logout</a>
+    <a href="/addtask">addtask</a>
+    <a href="/removetask">removetask</a>
+    <a href="/edittask">edittask</a>
+    <a href="/addevent">addevent</a>
+    <a href="/invitations">invitations</a>
+    <a href="/report">report</a>
+    <a href="/signup">signup</a>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Remove Task</title>
+  <link rel="stylesheet" href="removetask.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Remove Task</h1>
+    <form id="removeTaskForm" action="/removetask" method="POST">
+      <div class="form-group">
+        <label for="taskId">Task ID:</label>
+        <input type="number" id="taskId" name="taskId" required min="1" />
+      </div>
+      <button type="submit" id="removeBtn">Remove Task</button>
+    </form>
+
+    <a href="/" class="back-home">Back to Home</a>
+
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('removeTaskForm');
+      const messageDiv = document.getElementById('message');
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const successMsg = urlParams.get('success');
+      const errorMsg = urlParams.get('error');
+
+      if (successMsg) {
+        showMessage(successMsg, 'success');
+      } else if (errorMsg) {
+        showMessage(errorMsg, 'error');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch('/removetask', {
+          method: 'POST',
+          body: formData,
+        })
+          .then((response) => {
+            if (response.redirected) {
+              window.location.href = response.url;
+            }
+          })
+          .catch((error) => {
+            showMessage('Request failed: ' + error.message, 'error');
+          });
+      });
+
+      function showMessage(message, type) {
+        messageDiv.textContent = message;
+        messageDiv.className = 'message ' + type;
+        setTimeout(() => {
+          messageDiv.textContent = '';
+          messageDiv.className = 'message';
+        }, 5000);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add New Task</title>
+  <link rel="stylesheet" href="addtask.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Add New Task</h1>
+    <form id="addTaskForm" action="/addtask" method="POST">
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="time">Hour:</label>
+        <select id="time" name="time" required>
+          <option value="0">12 AM</option>
+          <option value="1">1 AM</option>
+          <option value="2">2 AM</option>
+          <option value="3">3 AM</option>
+          <option value="4">4 AM</option>
+          <option value="5">5 AM</option>
+          <option value="6">6 AM</option>
+          <option value="7">7 AM</option>
+          <option value="8">8 AM</option>
+          <option value="9">9 AM</option>
+          <option value="10">10 AM</option>
+          <option value="11">11 AM</option>
+          <option value="12">12 PM</option>
+          <option value="13">1 PM</option>
+          <option value="14">2 PM</option>
+          <option value="15">3 PM</option>
+          <option value="16">4 PM</option>
+          <option value="17">5 PM</option>
+          <option value="18">6 PM</option>
+          <option value="19">7 PM</option>
+          <option value="20">8 PM</option>
+          <option value="21">9 PM</option>
+          <option value="22">10 PM</option>
+          <option value="23">11 PM</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description (optional):</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn">Add Task</button>
+    </form>
+
+    <button id="homeBtn" class="btn home-btn">Back to Home</button>
+
+    <div id="message" class="message" style="display:none;"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('addTaskForm');
+      const messageDiv = document.getElementById('message');
+      const homeBtn = document.getElementById('homeBtn');
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const successMsg = urlParams.get('success');
+      const errorMsg = urlParams.get('error');
+
+      if (successMsg) {
+        showMessage(successMsg, 'success');
+      } else if (errorMsg) {
+        showMessage(errorMsg, 'error');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch('/addtask', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => {
+            if (response.redirected) {
+              window.location.href = response.url;
+            } else if (!response.ok) {
+              response.text().then(text => showMessage(text || 'Failed to add task.', 'error'));
+            }
+          })
+          .catch(error => {
+            showMessage('Error: ' + error.message, 'error');
+          });
+      });
+
+      homeBtn.addEventListener('click', () => {
+        window.location.href = '/';
+      });
+
+      function showMessage(message, type) {
+        messageDiv.textContent = message;
+        messageDiv.className = 'message ' + type;
+        messageDiv.style.display = 'block';
+        setTimeout(() => {
+          messageDiv.textContent = '';
+          messageDiv.className = 'message';
+          messageDiv.style.display = 'none';
+        }, 5000);
+      }
+    });
+  </script>
+</body>
+</html>
